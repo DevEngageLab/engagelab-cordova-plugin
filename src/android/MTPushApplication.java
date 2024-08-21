@@ -27,6 +27,7 @@ public class MTPushApplication extends Application {
                 JSONObject jsonObject = new JSONObject(mtpush_config);
                 setDebug(jsonObject);
                 setTcpSSL(jsonObject);
+                // testConfigGoogle(jsonObject); // Just Test. Please do not call in production environment， or set the "testConfigGoogle" property to no in 'mt_engagelab_cordova_push_config' file.
             } else {
                 MTPushEngagelab.logD(TAG, "mt_engagelab_cordova_push_config is null");
             }
@@ -47,6 +48,13 @@ public class MTPushApplication extends Application {
         if (jsonObject.has("tcp_ssl")){
             boolean tcp_ssl = jsonObject.optBoolean("tcp_ssl", false);
             MTCorePrivatesApi.setTcpSSl(tcp_ssl);
+        }
+    }
+
+    private void testConfigGoogle(JSONObject jsonObject) {
+        if (jsonObject.has("testConfigGoogle")){
+            boolean testConfigGoogle = jsonObject.optBoolean("testConfigGoogle", false);
+            MTCorePrivatesApi.setTcpSSl(testConfigGoogle);
         }
     }
 

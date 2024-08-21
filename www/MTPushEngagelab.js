@@ -358,7 +358,8 @@ MTPushEngagelab.prototype.uploadPlatformTokenAndroid = function (platform, token
  * mt_engagelab_cordova_push_config文件内容：
  * {
  *"tcp_ssl": true,
- *"debug":true
+ *"debug":true,
+ * "testConfigGoogle":false
  *}
  * <p>
  * 初始化前调用
