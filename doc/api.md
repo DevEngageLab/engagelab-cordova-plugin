@@ -74,9 +74,23 @@ window.cordova.plugins.MTPushEngagelab.configDebugMode(true)
 
 To set whether to enable voice broadcast.
 
+android: you just need to call this api.
+
+iOS：you also need to call setAppGroupId: and some other configuration is required in the native project. 
+1. You should [enable AppGroups capability](https://www.engagelab.com/docs/app-push/client-sdk-reference/ios-sdk/ios-certificate-setting-guide#enable-appgroups-capability)
+2. Create a new Target and select Notification Service Extension. You can define the Target name yourself.
+3. In the main project, select Signing&Capabilities, click +Capablitity, and select App Groups. Then select the + sign in the App Groups item and configure your appGroupId.
+4. In Notification Service Extension, repeat the steps in step 3.
+5. In Notification Service Extension,You need to configure a few lines of code. Please check [voice-broadcasting-feature](https://www.engagelab.com/docs/app-push/client-sdk-reference/ios-sdk/sdk-api-guide#voice-broadcasting-feature-1) for details.
+
 #### Interface definition
 
 ```js
+// android
+window.cordova.plugins.MTPushEngagelab.setEnablePushTextToSpeech(enable)
+
+// ios
+window.cordova.plugins.MTPushEngagelab.setAppGroupId("your app group id");
 window.cordova.plugins.MTPushEngagelab.setEnablePushTextToSpeech(enable)
 ```
 

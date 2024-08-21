@@ -214,8 +214,7 @@
         <header-file src="src/ios/AppDelegate+MTPush.h"/>
         <source-file src="src/ios/AppDelegate+MTPush.m"/>
 
-        <header-file src="src/ios/lib/MTPushService.h"/>
-        <source-file src="src/ios/lib/mtpush-ios-3.3.0.a" framework="true"/>
+        <source-file src="src/ios/lib/mtpush-ios-4.4.0.xcframework" framework="true" />
         <resource-file src="src/ios/MTPushConfig.plist" />
 
         <framework src="CFNetwork.framework" weak="true" />
