@@ -16,6 +16,8 @@
     <preference name="MEIZU_APPKEY" default="MEIZU_APPKEY"/>
     <preference name="XIAOMI_GLOBAL_APPID" default="XIAOMI_GLOBAL_APPID"/>
     <preference name="XIAOMI_GLOBAL_APPKEY" default="XIAOMI_GLOBAL_APPKEY"/>
+    <preference name="XIAOMI_APPID" default="XIAOMI_APPID"/>
+    <preference name="XIAOMI_APPKEY" default="XIAOMI_APPKEY"/>
     <preference name="ENGAGELAB_PRIVATES_APPKEY"/>
     <preference name="ENGAGELAB_PRIVATES_CHANNEL" default="developer-default"/>
     <preference name="ENGAGELAB_PRIVATES_PROCESS" default=":remote"/>
@@ -112,6 +114,15 @@
                     tools:node="replace"
                     android:name="XIAOMI_GLOBAL_APPKEY"
                     android:value="$XIAOMI_GLOBAL_APPKEY"/>
+
+            <meta-data
+                    tools:node="replace"
+                    android:name="XIAOMI_APPID"
+                    android:value="$XIAOMI_APPID"/>
+            <meta-data
+                    tools:node="replace"
+                    android:name="XIAOMI_APPKEY"
+                    android:value="$XIAOMI_APPKEY"/>
 
 
             <meta-data

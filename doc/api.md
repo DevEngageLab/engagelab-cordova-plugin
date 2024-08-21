@@ -68,6 +68,28 @@ window.cordova.plugins.MTPushEngagelab.configDebugMode(enable)
 window.cordova.plugins.MTPushEngagelab.configDebugMode(true)
 ```
 
+## Turn on voice broadcast
+
+### setEnablePushTextToSpeech （both android/ios support）
+
+To set whether to enable voice broadcast.
+
+#### Interface definition
+
+```js
+window.cordova.plugins.MTPushEngagelab.setEnablePushTextToSpeech(enable)
+```
+
+#### Parameter Description
+
+- enable: true means open, false means close, the default is false
+
+#### code example
+
+```js
+window.cordova.plugins.MTPushEngagelab.configDebugMode(true)
+```
+
 ## Get RegistrationID （both android/ios support）
 
 ### getRegistrationId

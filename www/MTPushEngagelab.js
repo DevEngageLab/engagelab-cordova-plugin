@@ -84,6 +84,17 @@ MTPushEngagelab.prototype.configDebugMode = function (enable) {
     this.callNative("configDebugMode", [enable], null);
 }
 
+/**
+ * 设置是否开启语音播报
+ *
+ * @param context 不为空
+ * @param enable  true为打开，false为关闭，默认为false
+ */
+MTPushEngagelab.prototype.setEnablePushTextToSpeech = function (enable) {
+    MTPushEngagelab.debug = enable;
+    console.log("setEnablePushTextToSpeech:" + enable);
+    this.callNative("setEnablePushTextToSpeech", [enable], null);
+}
 
 /**
  * 配置使用国密加密
