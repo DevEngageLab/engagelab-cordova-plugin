@@ -119,6 +119,10 @@ public class MTPushEngagelab extends CordovaPlugin {
             JSONArray myData = data.getJSONArray(1);
             DEBUG = myData.getBoolean(0);
         }
+        if ("setEnablePushTextToSpeech".equals(name)){
+            JSONArray myData = data.getJSONArray(1);
+            DEBUG = myData.getBoolean(0);
+        }
         cordova.getThreadPool().execute(new Runnable() {
             @Override
             public void run() {
@@ -190,6 +194,22 @@ public class MTPushEngagelab extends CordovaPlugin {
             Context context = getApplicationContext();
             boolean enable = data.getBoolean(0);
             MTCorePrivatesApi.configDebugMode(context, enable);
+        } catch (JSONException e) {
+            e.printStackTrace();
+        }
+    }
+
+    /**
+     * 设置是否开启语音播报， 需要导入语音包(mt-sdk-sound-x.x.x.aar)
+     *
+     * @param context 不为空
+     * @param enable  true为打开，false为关闭，默认为false
+     */
+    void setEnablePushTextToSpeech(JSONArray data, CallbackContext callbackContext) {
+        try {
+            Context context = getApplicationContext();
+            boolean enable = data.getBoolean(0);
+            MTPushPrivatesApi.setEnablePushTextToSpeech(context, enable);
         } catch (JSONException e) {
             e.printStackTrace();
         }

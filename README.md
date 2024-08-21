@@ -5,15 +5,14 @@ cordova plugin for push SDK
 - Install directly via url:
 
   ```shell
-  cordova plugin add https://github.com/DevEngageLab/engagelab-cordova-plugin.git --variable ENGAGELAB_PRIVATES_APPKEY=your_APPKEY  --variable VIVO_APPID=  --variable VIVO_APPKEY=  --variable OPPO_APPID=  --variable OPPO_APPKEY=  --variable OPPO_APPSECRET=  --variable MEIZU_APPID=  --variable MEIZU_APPKEY=  --variable XIAOMI_GLOBAL_APPID=  --variable XIAOMI_GLOBAL_APPKEY=  --variable HONOR_APPID=
+  cordova plugin add  --variable ENGAGELAB_PRIVATES_APPKEY=your_APPKEY  --variable VIVO_APPID=  --variable VIVO_APPKEY=  --variable OPPO_APPID=  --variable OPPO_APPKEY=  --variable OPPO_APPSECRET=  --variable MEIZU_APPID=  --variable MEIZU_APPKEY=  --variable XIAOMI_GLOBAL_APPID=  --variable XIAOMI_GLOBAL_APPKEY=  --variable HONOR_APPID= --variable XIAOMI_APPID=  --variable XIAOMI_APPKEY=
   ```
 
 - Or download to local for local installation：
 
   ```shell
-  cordova plugin add Your_Plugin_Path --variable ENGAGELAB_PRIVATES_APPKEY=your_APPKEY  --variable VIVO_APPID=  --variable VIVO_APPKEY=  --variable OPPO_APPID=  --variable OPPO_APPKEY=  --variable OPPO_APPSECRET=  --variable MEIZU_APPID=  --variable MEIZU_APPKEY=  --variable XIAOMI_GLOBAL_APPID=  --variable XIAOMI_GLOBAL_APPKEY=  --variable HONOR_APPID=
+  cordova plugin add Your_Plugin_Path --variable ENGAGELAB_PRIVATES_APPKEY=your_APPKEY  --variable VIVO_APPID=  --variable VIVO_APPKEY=  --variable OPPO_APPID=  --variable OPPO_APPKEY=  --variable OPPO_APPSECRET=  --variable MEIZU_APPID=  --variable MEIZU_APPKEY=  --variable XIAOMI_GLOBAL_APPID=  --variable XIAOMI_GLOBAL_APPKEY=  --variable HONOR_APPID= --variable XIAOMI_APPID=  --variable XIAOMI_APPKEY=
   ```
-
 
 ### parameter
 
@@ -49,11 +48,18 @@ cordova plugin for push SDK
   --variable MEIZU_APPKEY=
   ```
 
-- XIAOMI Manufacturer : Must be set, if not available, fill in the blank
+- XIAOMI Global Manufacturer : Must be set, if not available, fill in the blank
   ```shell
   --variable XIAOMI_GLOBAL_APPID=
   --variable XIAOMI_GLOBAL_APPKEY=
   ```
+
+- XIAOMI Manufacturer : Must be set, if not available, fill in the blank
+  ```shell
+  --variable XIAOMI_APPID=
+  --variable XIAOMI_APPKEY=
+  ```
+
 - Honor Manufacturer : Must be set, if not available, fill in the blank
   ```shell
   --variable HONOR_APPID=
