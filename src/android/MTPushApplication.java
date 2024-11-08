@@ -47,14 +47,14 @@ public class MTPushApplication extends Application {
     private void setTcpSSL(JSONObject jsonObject) {
         if (jsonObject.has("tcp_ssl")){
             boolean tcp_ssl = jsonObject.optBoolean("tcp_ssl", false);
-            MTCorePrivatesApi.setTcpSSl(tcp_ssl);
+            MTCorePrivatesApi.setTcpSSl(getApplicationContext(),tcp_ssl);
         }
     }
 
     private void testConfigGoogle(JSONObject jsonObject) {
         if (jsonObject.has("testConfigGoogle")){
-            boolean testConfigGoogle = jsonObject.optBoolean("testConfigGoogle", false);
-            MTCorePrivatesApi.setTcpSSl(testConfigGoogle);
+            boolean ret = jsonObject.optBoolean("testConfigGoogle", false);
+            MTCorePrivatesApi.testConfigGoogle(getApplicationContext(),ret);
         }
     }
 

@@ -116,6 +116,17 @@ cordova plugin for push SDK
      maven { url 'https://developer.huawei.com/repo/' }
   ```
 
+### 安卓设置tcp_sll、debug、fcm 国内测试 需要做以下配置
+ * 1. 将 插件 src/android/MTPushApplication.java文件拖入到项目插件文件中, 找到MTPushEngagelab.java文件，放在与其同级的位置。
+ * 2. 将 插件 example/mt_engagelab_cordova_push_config 文件拖入到项目 src/main/assets 文件夹中。
+ * 3. 在 src/main/assets/ 下添加 mt_engagelab_cordova_push_config 文件（可查看example文件夹下的 mt_engagelab_cordova_push_config 文件）
+ * mt_engagelab_cordova_push_config 文件内容：
+  {
+  "tcp_ssl": true,
+  "debug":true,
+  "testConfigGoogle":false // 在正式环境请请将其设置为false, 国内测试fcm请设置为true.
+  }
+ * 4. 在AndroidManifest.xml的application中添加android:name="com.engagelab.push.MTPushApplication"
 
 ## Usage
 
