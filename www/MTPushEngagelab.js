@@ -107,6 +107,18 @@ MTPushEngagelab.prototype.setEnablePushTextToSpeech = function (enable) {
 }
 
 /**
+ * 配置设备迁移功能
+ * 如果启用，当设备型号发生变化时，会清除本地的注册id、uid信息，重新注册
+ * 请在 init 函数之前调用
+ *
+ * @param enable  是否启用设备迁移，true为启用，false为禁用
+ */
+MTPushEngagelab.prototype.setEnableResetOnDeviceChange = function (enable) {
+    console.log("setEnableResetOnDeviceChange:" + enable);
+    this.callNative("setEnableResetOnDeviceChange", [enable], null);
+}
+
+/**
  * 配置使用国密加密
  *
  * @param context 不为空

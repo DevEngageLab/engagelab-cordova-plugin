@@ -115,6 +115,12 @@ NSData * myDeviceToken;
         [self setTags:data];
     }else if ([name isEqualToString:(@"setTcpSSL")]){
         [self setTcpSSL:data];
+    }else if ([name isEqualToString:(@"setAppGroupId")]){
+        [self setAppGroupId:data];
+    }else if ([name isEqualToString:(@"setEnablePushTextToSpeech")]){
+        [self setEnablePushTextToSpeech:data];
+    }else if ([name isEqualToString:(@"setEnableResetOnDeviceChange")]){
+        [self setEnableResetOnDeviceChange:data];
     }
 
     //    if (name != nil && [name length] > 0) {
@@ -209,6 +215,21 @@ NSData * myDeviceToken;
 -(void)setTcpSSL:(NSArray* )data {
     bool value = [data objectAtIndex:0];
     [MTPushService setTcpSSL:value];
+}
+
+-(void)setAppGroupId:(NSArray* )data {
+    bool value = [data objectAtIndex:0];
+    [MTPushService setAppGroupId:value];
+}
+
+-(void)setEnablePushTextToSpeech:(NSArray* )data {
+    bool value = [data objectAtIndex:0];
+    [MTPushService enablePushTextToSpeech:value];
+}
+
+-(void)setEnableResetOnDeviceChange:(NSArray* )data {
+    bool value = [data objectAtIndex:0];
+    [MTPushService enableResetOnDeviceChange:value];
 }
 
 -(void)setTags:(NSArray* )data {
