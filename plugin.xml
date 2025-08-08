@@ -2,7 +2,7 @@
 <plugin xmlns="http://apache.org/cordova/ns/plugins/1.0"
         xmlns:android="http://schemas.android.com/apk/res/android"
         id="mt-push-engagelab-plugin"
-        version="1.0.3">
+        version="1.0.4">
     <name>MTPushEngagelab</name>
 
 
@@ -214,7 +214,7 @@
         <header-file src="src/ios/AppDelegate+MTPush.h"/>
         <source-file src="src/ios/AppDelegate+MTPush.m"/>
 
-        <source-file src="src/ios/lib/mtpush-ios-5.0.0.xcframework" framework="true" />
+        <source-file src="src/ios/lib/mtpush-ios-5.1.0.xcframework" framework="true" />
         <resource-file src="src/ios/MTPushConfig.plist" />
 
         <framework src="CFNetwork.framework" weak="true" />
