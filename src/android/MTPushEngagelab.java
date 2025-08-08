@@ -119,10 +119,6 @@ public class MTPushEngagelab extends CordovaPlugin {
             JSONArray myData = data.getJSONArray(1);
             DEBUG = myData.getBoolean(0);
         }
-        if ("setEnablePushTextToSpeech".equals(name)){
-            JSONArray myData = data.getJSONArray(1);
-            DEBUG = myData.getBoolean(0);
-        }
         cordova.getThreadPool().execute(new Runnable() {
             @Override
             public void run() {
@@ -210,6 +206,22 @@ public class MTPushEngagelab extends CordovaPlugin {
             Context context = getApplicationContext();
             boolean enable = data.getBoolean(0);
             MTPushPrivatesApi.setEnablePushTextToSpeech(context, enable);
+        } catch (JSONException e) {
+            e.printStackTrace();
+        }
+    }
+
+    /**
+     * 配置设备迁移功能
+     * 如果启用，当设备型号发生变化时，会清除本地的注册id、uid信息，重新注册
+     *
+     * @param enable  是否启用设备迁移，true为启用，false为禁用
+     */
+     void setEnableResetOnDeviceChange(JSONArray data, CallbackContext callbackContext) {
+        try {
+            Context context = getApplicationContext();
+            boolean enable = data.getBoolean(0);
+            MTCorePrivatesApi.setEnableResetOnDeviceChange(context, enable);
         } catch (JSONException e) {
             e.printStackTrace();
         }
