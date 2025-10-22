@@ -6,6 +6,7 @@ import android.util.Log;
 
 import com.engagelab.privates.core.api.MTCorePrivatesApi;
 import com.engagelab.privates.push.api.MTPushPrivatesApi;
+import com.engagelab.privates.push.api.MTPushCollectControl;
 
 import org.apache.cordova.CallbackContext;
 import org.apache.cordova.CordovaInterface;
@@ -878,6 +879,29 @@ public class MTPushEngagelab extends CordovaPlugin {
 
     public static void logW(String tag, String msg) {
         Log.w(tag, msg);
+    }
+
+    /**
+     * 设置数据采集控制
+     *
+     * @param data 包含采集控制参数的JSON数组
+     * @param callbackContext 回调上下文
+     */
+    void setCollectControl(JSONArray data, CallbackContext callbackContext) {
+        try {
+            MTPushCollectControl control = new MTPushCollectControl();
+            // 从JSON数据中获取参数
+            if (data.length() > 0) {
+                JSONObject params = data.getJSONObject(0);
+                if (params.has("gaid")) {
+                    boolean gaid = params.getBoolean("gaid");
+                    control.setGaid(gaid);
+                }
+            }
+            MTPushPrivatesApi.setCollectControl(control);
+        } catch (Throwable e) {
+            e.printStackTrace();
+        } 
     }
 }
 

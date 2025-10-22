@@ -128,3 +128,29 @@ window.cordova.plugins.MTPushEngagelab.getRegistrationId(function(rId) {
   console.log("MTPushEngagelab:registrationID is " + rId)
 })
 ```
+
+## Data Collection Control (Android only)
+
+### setCollectControl
+
+Set data collection control parameters
+
+#### Interface definition
+
+```js
+window.cordova.plugins.MTPushEngagelab.setCollectControl(control)
+```
+
+#### Parameters
+
+- control: Object containing collection control parameters
+  - gaid: Boolean - Whether to collect GAID (Google Advertising ID), default is true
+
+#### code example
+
+```js
+// Disable GAID collection
+window.cordova.plugins.MTPushEngagelab.setCollectControl({
+  gaid: false
+});
+```
