@@ -121,6 +121,8 @@ NSData * myDeviceToken;
         [self setEnablePushTextToSpeech:data];
     }else if ([name isEqualToString:(@"setEnableResetOnDeviceChange")]){
         [self setEnableResetOnDeviceChange:data];
+    }else if ([name isEqualToString:(@"setCollectControl")]){
+        
     }
 
     //    if (name != nil && [name length] > 0) {

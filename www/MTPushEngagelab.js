@@ -392,6 +392,17 @@ MTPushEngagelab.prototype.setTcpSSLIos = function (enable) {
     this.callNative("setTcpSSL", [enable], null);
 }
 
+/**
+ * 设置数据采集控制
+ * 
+ * @param control 采集控制对象，包含gaid等参数
+ * 
+ */
+MTPushEngagelab.prototype.setCollectControl = function (control) {
+    console.log("setCollectControl:" + JSON.stringify(control));
+    this.callNative("setCollectControl", [control], null);
+}
+
 if (!window.plugins) {
     window.plugins = {};
 }
