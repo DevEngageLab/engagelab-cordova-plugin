@@ -395,7 +395,9 @@ MTPushEngagelab.prototype.setTcpSSLIos = function (enable) {
 /**
  * 设置数据采集控制
  * 
- * @param control 采集控制对象，包含gaid等参数
+ * @param control 采集控制对象，包含gaid、aid等参数
+ *   - gaid: 是否采集GAID（Google Advertising ID），默认true
+ *   - aid: 是否采集AID（AndroidId），默认true
  * 
  */
 MTPushEngagelab.prototype.setCollectControl = function (control) {

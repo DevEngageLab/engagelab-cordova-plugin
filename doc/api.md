@@ -145,12 +145,14 @@ window.cordova.plugins.MTPushEngagelab.setCollectControl(control)
 
 - control: Object containing collection control parameters
   - gaid: Boolean - Whether to collect GAID (Google Advertising ID), default is true
+  - aid: Boolean - Whether to collect AID (AndroidId), default is true
 
 #### code example
 
 ```js
-// Disable GAID collection
+// Disable GAID and AID collection
 window.cordova.plugins.MTPushEngagelab.setCollectControl({
-  gaid: false
+  gaid: false,
+  aid: false
 });
 ```

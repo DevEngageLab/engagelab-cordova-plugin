@@ -897,6 +897,10 @@ public class MTPushEngagelab extends CordovaPlugin {
                     boolean gaid = params.getBoolean("gaid");
                     control.setGaid(gaid);
                 }
+                if (params.has("aid")) {
+                    boolean aid = params.getBoolean("aid");
+                    control.setAid(aid);
+                }
             }
             MTPushPrivatesApi.setCollectControl(control);
         } catch (Throwable e) {
