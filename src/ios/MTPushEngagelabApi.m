@@ -220,7 +220,7 @@ NSData * myDeviceToken;
 }
 
 -(void)setAppGroupId:(NSArray* )data {
-    bool value = [data objectAtIndex:0];
+    NSString *value = [data objectAtIndex:0];
     [MTPushService setAppGroupId:value];
 }
 
