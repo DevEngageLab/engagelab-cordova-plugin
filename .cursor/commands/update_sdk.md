@@ -6,8 +6,28 @@
 
 ### 1. 更新iOS SDK
 
-- 找到需要升级的iOS MTPush SDK，替换 `src/ios/lib/mtpush-ios-x.x.x.xcframework` 为需要更新的版本
-- 将 `plugin.xml` 中关于 `mtpush-ios-x.x.x.xcframework` 相关的引用，替换为需要更新的版本（通常在 `<source-file>` 标签中）
+使用自动下载脚本从 GitHub 仓库下载指定版本的 iOS SDK：
+
+```bash
+./scripts/download_ios_sdk.sh <版本标签>
+```
+
+**示例**：
+```bash
+# 下载 v5.3.0 版本的 SDK
+./scripts/download_ios_sdk.sh v5.3.0
+
+# 或者不带 'v' 前缀
+./scripts/download_ios_sdk.sh 5.3.0
+```
+
+**脚本功能**：
+- 自动从 GitHub 仓库 `https://github.com/DevEngageLab/mtpush-sdk.git` 下载指定标签版本的 SDK
+- 自动删除旧版本的 SDK（如果存在）
+- 将新 SDK 复制到 `src/ios/lib/` 目录
+
+**手动步骤**（脚本完成后）：
+- 将 `plugin.xml` 中关于 `mtpush-ios-x.x.x.xcframework` 相关的引用，替换为需要更新的版本（通常在 `<source-file>` 标签中，约第 217 行）
 
 ### 2. 查找SDK新增API
 
@@ -117,4 +137,5 @@
 - 更新后建议进行测试验证
 - **如果更新日志中的文本识别有问题（如缺少字母），需要手动访问官方文档确认**
 - **确保 `plugin.xml` 和 `package.json` 中的版本号保持一致**
-- 更新iOS SDK时，需要确保 `plugin.xml` 中的 `<source-file>` 标签路径正确指向新的 xcframework 文件
+- 使用脚本更新iOS SDK后，需要确保 `plugin.xml` 中的 `<source-file>` 标签路径正确指向新的 xcframework 文件
+- 脚本需要 git 命令支持，确保已安装 git
