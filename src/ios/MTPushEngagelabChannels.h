@@ -9,7 +9,7 @@
 #import <Cordova/CDV.h>
 
 
-@interface MTPushEngagelabChannels{
+@interface MTPushEngagelabChannels: NSObject{
 
 }
 

@@ -11,7 +11,7 @@
 # define MYLog(fmt, ...) NSLog((@"[MTPushEngagelabPlugin] " fmt ""), ##__VA_ARGS__);
 
 
-@interface MTPushEngagelabUtils{
+@interface MTPushEngagelabUtils: NSObject{
 
 }
 
