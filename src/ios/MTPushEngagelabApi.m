@@ -122,7 +122,11 @@ NSData * myDeviceToken;
     }else if ([name isEqualToString:(@"setEnableResetOnDeviceChange")]){
         [self setEnableResetOnDeviceChange:data];
     }else if ([name isEqualToString:(@"setCollectControl")]){
-        
+
+    }else if ([name isEqualToString:(@"reportCustomDisplay")]){
+        [self reportCustomDisplay:data];
+    }else if ([name isEqualToString:(@"reportCustomClick")]){
+        [self reportCustomClick:data];
     }
 
     //    if (name != nil && [name length] > 0) {
@@ -232,6 +236,18 @@ NSData * myDeviceToken;
 -(void)setEnableResetOnDeviceChange:(NSArray* )data {
     bool value = [data objectAtIndex:0];
     [MTPushService enableResetOnDeviceChange:value];
+}
+
+// data: [messageId, platform, platformMessageId]，iOS 仅使用 messageId
+-(void)reportCustomDisplay:(NSArray* )data {
+    NSString *messageId = [data objectAtIndex:0];
+    [MTPushService reportCustomDisplay:messageId];
+}
+
+// data: [messageId, platform, platformMessageId]，iOS 仅使用 messageId
+-(void)reportCustomClick:(NSArray* )data {
+    NSString *messageId = [data objectAtIndex:0];
+    [MTPushService reportCustomClick:messageId];
 }
 
 -(void)setTags:(NSArray* )data {

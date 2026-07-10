@@ -1,6 +1,6 @@
 {
   "name": "MTPushEngagelab",
-  "version": "1.0.8",
+  "version": "1.0.9",
   "description": "MTPush Engagelab cordova simple feature",
   "cordova": {
     "id": "com.engagelab.mtpush",

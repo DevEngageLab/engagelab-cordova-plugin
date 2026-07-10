@@ -356,6 +356,34 @@ MTPushEngagelab.prototype.reportNotificationOpenedAndroid = function (messageId,
     this.callNative("reportNotificationOpened", [messageId, platform, platformMessageId], null);
 }
 
+/**
+ * 上报自定义消息展示
+ * <p>
+ * 走http/https上报
+ *
+ * @param messageId         Engagelab消息id，不为空
+ * @param platform          厂商，取值范围（0:Engagelab、2:huawei、7:honor、8:google），仅Android使用，iOS忽略
+ * @param platformMessageId 厂商消息id，可为空，仅Android使用，iOS忽略
+ */
+MTPushEngagelab.prototype.reportCustomDisplay = function (messageId, platform, platformMessageId) {
+    console.log("reportCustomDisplay");
+    this.callNative("reportCustomDisplay", [messageId, platform, platformMessageId], null);
+}
+
+/**
+ * 上报自定义消息点击
+ * <p>
+ * 走http/https上报
+ *
+ * @param messageId         Engagelab消息id，不为空
+ * @param platform          厂商，取值范围（0:Engagelab、2:huawei、7:honor、8:google），仅Android使用，iOS忽略
+ * @param platformMessageId 厂商消息id，可为空，仅Android使用，iOS忽略
+ */
+MTPushEngagelab.prototype.reportCustomClick = function (messageId, platform, platformMessageId) {
+    console.log("reportCustomClick");
+    this.callNative("reportCustomClick", [messageId, platform, platformMessageId], null);
+}
+
 
 /**
  * 上传厂商token
