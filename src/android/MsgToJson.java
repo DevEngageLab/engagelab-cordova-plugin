@@ -7,6 +7,7 @@ import com.engagelab.privates.push.api.CustomMessage;
 import com.engagelab.privates.push.api.NotificationMessage;
 import com.engagelab.privates.push.api.PlatformTokenMessage;
 import com.engagelab.privates.push.api.TagMessage;
+import com.engagelab.privates.push.api.VoipDataMessage;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -104,6 +105,19 @@ public class MsgToJson {
         }
         return jsonObject.toString();
     }
+    public static String voipMessageToJson(VoipDataMessage voipDataMessage) {
+        JSONObject jsonObject = new JSONObject();
+        try {
+            jsonObject.put("messageId", voipDataMessage.getMessageId());
+            jsonObject.put("appkey", voipDataMessage.getAppkey());
+            jsonObject.put("extraData", voipDataMessage.getExtraData());
+            jsonObject.put("platform", voipDataMessage.getPlatform());
+        } catch (JSONException e) {
+            e.printStackTrace();
+        }
+        return jsonObject.toString();
+    }
+
     public static String booleanToJson(boolean enable) {
         JSONObject jsonObject = new JSONObject();
         try {

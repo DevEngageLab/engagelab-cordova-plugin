@@ -9,6 +9,7 @@ import com.engagelab.privates.push.api.CustomMessage;
 import com.engagelab.privates.push.api.NotificationMessage;
 import com.engagelab.privates.push.api.PlatformTokenMessage;
 import com.engagelab.privates.push.api.TagMessage;
+import com.engagelab.privates.push.api.VoipDataMessage;
 
 /**
  * This class echoes a string called from JavaScript.
@@ -112,6 +113,18 @@ public class UserReceiver extends MTCommonReceiver {
     public void onAliasMessage(Context context, AliasMessage aliasMessage) {
         MTPushEngagelab.logD(TAG, "onAliasMessage:" + aliasMessage.toString());
         MTPushEngagelab.onCommonReceiver("onAliasMessage", MsgToJson.aliasMessageToJson(aliasMessage));
+    }
+
+    /**
+     * VoIP消息回调，支持厂商：小米、OPPO、vivo、荣耀
+     *
+     * @param context         不为空
+     * @param voipDataMessage VoIP消息
+     */
+    @Override
+    public void onVoipMessage(Context context, VoipDataMessage voipDataMessage) {
+        MTPushEngagelab.logD(TAG, "onVoipMessage:" + voipDataMessage.toString());
+        MTPushEngagelab.onCommonReceiver("onVoipMessage", MsgToJson.voipMessageToJson(voipDataMessage));
     }
 }
 
