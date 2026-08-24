@@ -1,5 +1,10 @@
 # Changelog
 
+## [1.0.10] - 2026-08-19
+
+### Changed
+- 更新 Android SDK 至 5.4.3；支持 OPPO 与 vivo 厂商消息角标处理。
+
 ## [1.0.9] - 2026-07-10
 
 ### Added
