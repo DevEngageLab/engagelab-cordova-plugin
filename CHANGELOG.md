@@ -1,5 +1,10 @@
 # Changelog
 
+## [1.0.12] - 2026-08-31
+
+### Changed
+- 更新 iOS SDK 至 5.4.4；Android 主 SDK 保持 5.4.3。
+
 ## [1.0.11] - 2026-08-25
 
 ### Changed
