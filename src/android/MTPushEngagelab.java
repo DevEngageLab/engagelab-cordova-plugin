@@ -772,6 +772,23 @@ public class MTPushEngagelab extends CordovaPlugin {
         }
     }
 
+    /**
+     * 请求订阅小米消息频道，结果通过 onCommandResult 回调返回。
+     */
+    void requestSubscribeChannel(JSONArray data, CallbackContext callbackContext) {
+        try {
+            JSONArray channelIdsJson = data.getJSONArray(0);
+            ArrayList<String> channelIds = new ArrayList<String>();
+            for (int i = 0; i < channelIdsJson.length(); i++) {
+                channelIds.add(channelIdsJson.getString(i));
+            }
+            MTPushPrivatesApi.requestSubscribeChannel(getApplicationContext(), channelIds);
+        } catch (JSONException e) {
+            e.printStackTrace();
+            callbackContext.error("Parameters error.");
+        }
+    }
+
 
     void addTags(JSONArray data, CallbackContext callbackContext) {
         int sequence = -1;
@@ -952,4 +969,3 @@ public class MTPushEngagelab extends CordovaPlugin {
         } 
     }
 }
-

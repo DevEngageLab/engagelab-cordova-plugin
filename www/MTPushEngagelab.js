@@ -205,6 +205,16 @@ MTPushEngagelab.prototype.turnOffPushAndroid = function () {
 }
 
 /**
+ * 请求订阅小米消息频道（Android only）。
+ * 结果通过 MTPushEngagelab.onMTCommonReceiver 的 onCommandResult 事件返回。
+ *
+ * @param {string[]} channelIds 小米消息频道 ID 列表
+ */
+MTPushEngagelab.prototype.requestSubscribeChannelAndroid = function (channelIds) {
+    this.callNative("requestSubscribeChannel", [channelIds], null);
+}
+
+/**
  * 设置通知展示时间，默认任何时间都展示
  *
  * @param context   不为空

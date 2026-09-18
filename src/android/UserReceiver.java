@@ -5,6 +5,7 @@ import android.util.Log;
 
 import com.engagelab.privates.common.component.MTCommonReceiver;
 import com.engagelab.privates.push.api.AliasMessage;
+import com.engagelab.privates.push.api.CmdMessage;
 import com.engagelab.privates.push.api.CustomMessage;
 import com.engagelab.privates.push.api.NotificationMessage;
 import com.engagelab.privates.push.api.PlatformTokenMessage;
@@ -91,6 +92,15 @@ public class UserReceiver extends MTCommonReceiver {
     }
 
     /**
+     * 通用命令结果回调，小米订阅消息结果也通过此回调返回。
+     */
+    @Override
+    public void onCommandResult(Context context, CmdMessage cmdMessage) {
+        MTPushEngagelab.logD(TAG, "onCommandResult:" + cmdMessage.toString());
+        MTPushEngagelab.onCommonReceiver("onCommandResult", MsgToJson.cmdMessageToJson(cmdMessage));
+    }
+
+    /**
      * 厂商token消息回调
      *
      * @param context              不为空
@@ -127,4 +137,3 @@ public class UserReceiver extends MTCommonReceiver {
         MTPushEngagelab.onCommonReceiver("onVoipMessage", MsgToJson.voipMessageToJson(voipDataMessage));
     }
 }
-
