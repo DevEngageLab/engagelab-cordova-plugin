@@ -4,7 +4,8 @@
 
 ### Changed
 - 更新 Android SDK 及厂商插件至 5.5.1；iOS SDK 保持 5.4.4。
-- Android 新增小米消息频道订阅接口及通用命令结果回调，小米 Push SDK 升级至 7.12.4。
+- 插件 Android 端新增 `requestSubscribeChannelAndroid(channelIds)` 小米消息频道订阅接口；结果通过 `MTPushEngagelab.onMTCommonReceiver` 的 `onCommandResult` 事件返回（小米订阅命令 `cmd = 2012`）。
+- 小米 Push SDK 升级至 7.12.4。
 
 ## [1.0.14] - 2026-09-14
 
