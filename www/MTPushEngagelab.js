@@ -210,6 +210,10 @@ MTPushEngagelab.prototype.turnOffPushAndroid = function () {
  *
  * @param {string[]} channelIds 小米消息频道 ID 列表
  */
+MTPushEngagelab.prototype.requestVivoSubscribeChannelAndroid = function (channelIds, successCallback, errorCallback) {
+    this.callNative("requestVivoSubscribeChannel", [channelIds], successCallback, errorCallback);
+};
+
 MTPushEngagelab.prototype.requestSubscribeChannelAndroid = function (channelIds) {
     this.callNative("requestSubscribeChannel", [channelIds], null);
 }

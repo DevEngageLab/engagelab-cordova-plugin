@@ -775,6 +775,20 @@ public class MTPushEngagelab extends CordovaPlugin {
     /**
      * 请求订阅小米消息频道，结果通过 onCommandResult 回调返回。
      */
+    void requestVivoSubscribeChannel(JSONArray data, CallbackContext callbackContext) {
+        if (!"vivo".equalsIgnoreCase(android.os.Build.MANUFACTURER)) { callbackContext.success(); return; }
+        android.app.Activity activity = cordova.getActivity();
+        if (activity == null) { callbackContext.error("A foreground Activity is required"); return; }
+        try {
+            JSONArray ids = data.getJSONArray(0);
+            ArrayList<String> channels = new ArrayList<String>();
+            for (int i = 0; i < ids.length(); i++) channels.add(ids.getString(i));
+            activity.runOnUiThread(new Runnable() {
+                @Override public void run() { try { MTPushPrivatesApi.requestVivoSubscribeChannel(activity, channels); callbackContext.success(); } catch (Throwable error) { callbackContext.error("Update the EngageLab SDK and vivo package"); } }
+            });
+        } catch (JSONException error) { callbackContext.error("Expected channel ID list"); }
+    }
+
     void requestSubscribeChannel(JSONArray data, CallbackContext callbackContext) {
         try {
             JSONArray channelIdsJson = data.getJSONArray(0);
