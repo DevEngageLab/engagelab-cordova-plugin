@@ -1,5 +1,14 @@
 # Changelog
 
+## [1.0.16] - 2026-10-27
+
+### Changed
+- Android SDK 依赖升级至 5.5.3；iOS SDK 保持 5.4.4。
+- 新增 `requestVivoSubscribeChannelAndroid(channelIds, successCallback, errorCallback)`；最终订阅结果通过 `onMTCommonReceiver` 的 `onCommandResult` 返回（`cmd = 2013`）。
+- vivo Push SDK 升级至 4.1.7.0_517，补充中英文 API 文档。
+- 在 plugin.xml 根节点声明 tools 命名空间，修复 tools:node 属性导致的 XML 解析失败。
+- 移除 config-file 不支持的 mode 属性，修复 Android AppKey、Service 和 Receiver 在插件安装时未写入应用 Manifest 的问题。
+
 ## [1.0.15] - 2026-09-18
 
 ### Changed
