@@ -1,8 +1,9 @@
 <?xml version='1.0' encoding='utf-8'?>
 <plugin xmlns="http://apache.org/cordova/ns/plugins/1.0"
         xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
         id="mt-push-engagelab-plugin"
-        version="1.0.15">
+        version="1.0.16">
     <name>MTPushEngagelab</name>
 
 
@@ -69,7 +70,7 @@
             <manifest xmlns:tools="http://schemas.android.com/tools" />
         </edit-config>
 
-        <config-file target="AndroidManifest.xml" parent="/manifest/application" mode="merge">
+        <config-file target="AndroidManifest.xml" parent="/manifest/application">
 
             <!-- 由于此类具有长连接功能，手机厂商省电优化时可能直接杀死包名带Engagelab字样的service -->
             <!-- 所以需要开发者继承com.engagelab.app.component.MTCommonService，提升长连接存活率，已达到提高消息到达率的目的 -->

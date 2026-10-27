@@ -204,6 +204,11 @@ MTPushEngagelab.prototype.turnOffPushAndroid = function () {
     this.callNative("turnOffPush", [], null);
 }
 
+/** 请求订阅 vivo 通知渠道；成功回调仅表示提交成功，最终结果通过 onCommandResult (cmd 2013) 返回。 */
+MTPushEngagelab.prototype.requestVivoSubscribeChannelAndroid = function (channelIds, successCallback, errorCallback) {
+    this.callNative("requestVivoSubscribeChannel", [channelIds], successCallback, errorCallback);
+};
+
 /**
  * 请求订阅小米消息频道（Android only）。
  * 结果通过 MTPushEngagelab.onMTCommonReceiver 的 onCommandResult 事件返回。
